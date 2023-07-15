@@ -1,2 +1,3 @@
 bastion_ami: ami-04823729c75214919
 region: us-east-1
+anywhere_ip: 0.0.0.0/0
