@@ -4,14 +4,14 @@
   gather_facts: no
   tasks:
     - name: Import VPC setup variable
-      include_vars: vars/bastion_setup
+      include_vars: vars/vpc_setup
 
     - name: Import VPC setup variable
       include_vars: vars/output_vars
 
-    - name: Create testkay ec2 key
+    - name: Create testkay bastion ec2 key
       ec2_key:
-        name: testkay-key
+        name: bastion-key
         region: "{{region}}"
       register: key_out
 
