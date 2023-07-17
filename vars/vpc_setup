@@ -20,3 +20,6 @@ zone2: us-east-1b
 zone3: us-east-1c
 
 state: present
+
+bastion_ami: ami-04823729c75214919
+anywhere_ip: 0.0.0.0/0
