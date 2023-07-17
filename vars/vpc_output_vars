@@ -1,3 +1,6 @@
+region: us-east-1
+anywhere_ip: 0.0.0.0/0
+state: present
 vpcid: vpc-0cb1378f49df249fa
 pubsub1id: subnet-0c6ff6aed23866fdd
 pubsub2id: subnet-078c8e1e3c2d2e7fc
