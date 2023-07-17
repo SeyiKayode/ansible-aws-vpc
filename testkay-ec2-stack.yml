@@ -21,3 +21,35 @@
         dest: "./loginkey_testkay.pem"
         mode: 0600
       when: testkaykey_out.changed
+    
+    - name: Create security group for load balancer
+      ec2_group:
+        name: testkayELB-sg
+        description: allow port 80 from everywhere and all ports within the security group
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        rules:
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            cidr_ip: "{{anywhere_ip}}"
+      register: testkayELBSG_out
+
+    - name: Create security group for testkay stack
+      ec2_group:
+        name: testkayStack-sg
+        description: allow port 22 from everywhere and all ports within the security group
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: tcp
+            from_port: 80
+            to_port: 80
+            group_id: "{{testkayELBSG_out.group_id}}"
+
+          - proto: tcp
+            from_port: 22
+            to_port: 22
+            group_id: "{{BastionSGid}}"
+      register: testkayStackSG_out
