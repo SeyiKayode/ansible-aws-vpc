@@ -53,3 +53,14 @@
             to_port: 22
             group_id: "{{BastionSGid}}"
       register: testkayStackSG_out
+
+    - name: Update security group for testkay stack with it's own security group id
+      ec2_group:
+        name: testkayStack-sg
+        description: allow port 22 from everywhere and all ports within the security group
+        region: "{{region}}"
+        vpc_id: "{{vpcid}}"
+        purge_rules: no
+        rules:
+          - proto: all
+            group_id: "{{testkayStackSG_out.group_id}}"
