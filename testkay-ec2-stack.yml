@@ -1,0 +1,23 @@
+- name: Setup testkay stack
+  hosts: localhost
+  connection: local
+  gather_facts: no
+  tasks:
+    - name: Import VPC setup variable
+      include_vars: vars/vpc_output_vars
+
+    - name: Import testkay setup variable
+      include_vars: vars/testkay_stack_setup
+
+    - name: Create testkay ec2 key
+      ec2_key:
+        name: testkay-stack-key
+        region: "{{region}}"
+      register: testkaykey_out
+
+    - name: Save private key into file loginkey_testkay.pem
+      copy:
+        content: "{{testkaykey_out.key.private_key}}"
+        dest: "./loginkey_testkay.pem"
+        mode: 0600
+      when: testkaykey_out.changed
