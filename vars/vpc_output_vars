@@ -1,0 +1,17 @@
+region: us-east-1
+anywhere_ip: 0.0.0.0/0
+state: present
+vpcid: vpc-0e18bcc78afff2f33
+pubsub1id: subnet-0d70d87b7f334139e
+pubsub2id: subnet-0c6da09f26198dce0
+pubsub3id: subnet-0355e3eba80729cfb
+privsub1id: subnet-07c02a6a7b67c9188
+privsub2id: subnet-07f9624d8b46bd483
+privsub3id: subnet-01f62ad54fd05cc37
+igwid: igw-007f2d4b1dbb61da5
+pubRTid: rtb-0f29f099dcb4ddc45
+NATGWid: nat-03870cc85d923f36b
+privRTid: rtb-08db4b0a2ee81e61f
+# BEGIN ANSIBLE MANAGED BLOCK
+BastionSGid: sg-0475c3ad06eeb840b
+# END ANSIBLE MANAGED BLOCK
