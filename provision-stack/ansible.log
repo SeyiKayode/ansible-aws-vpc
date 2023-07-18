@@ -1,0 +1,29 @@
+2023-07-18 11:29:01,801 p=8876 u=ubuntu n=ansible | PLAY [Set host to ip mapping in /etc/hosts file of all the instances in the stack] ********************************
+2023-07-18 11:29:01,840 p=8876 u=ubuntu n=ansible | TASK [Gathering Facts] ********************************************************************************************
+2023-07-18 11:29:03,864 p=8876 u=ubuntu n=ansible | ok: [web01]
+2023-07-18 11:29:03,918 p=8876 u=ubuntu n=ansible | ok: [cntl]
+2023-07-18 11:29:04,821 p=8876 u=ubuntu n=ansible | ok: [mq01]
+2023-07-18 11:29:04,858 p=8876 u=ubuntu n=ansible | ok: [mc01]
+2023-07-18 11:29:04,951 p=8876 u=ubuntu n=ansible | ok: [app01]
+2023-07-18 11:29:06,883 p=8876 u=ubuntu n=ansible | ok: [db01]
+2023-07-18 11:29:06,900 p=8876 u=ubuntu n=ansible | TASK [Import VPC setup Variable] **********************************************************************************
+2023-07-18 11:29:06,949 p=8876 u=ubuntu n=ansible | ok: [cntl]
+2023-07-18 11:29:06,972 p=8876 u=ubuntu n=ansible | ok: [web01]
+2023-07-18 11:29:06,993 p=8876 u=ubuntu n=ansible | ok: [app01]
+2023-07-18 11:29:07,016 p=8876 u=ubuntu n=ansible | ok: [mq01]
+2023-07-18 11:29:07,017 p=8876 u=ubuntu n=ansible | ok: [mc01]
+2023-07-18 11:29:07,025 p=8876 u=ubuntu n=ansible | ok: [db01]
+2023-07-18 11:29:07,036 p=8876 u=ubuntu n=ansible | TASK [Update hosts file for all the hosts] ************************************************************************
+2023-07-18 11:29:07,892 p=8876 u=ubuntu n=ansible | changed: [app01]
+2023-07-18 11:29:07,894 p=8876 u=ubuntu n=ansible | changed: [web01]
+2023-07-18 11:29:07,894 p=8876 u=ubuntu n=ansible | changed: [mc01]
+2023-07-18 11:29:07,895 p=8876 u=ubuntu n=ansible | changed: [mq01]
+2023-07-18 11:29:07,937 p=8876 u=ubuntu n=ansible | changed: [cntl]
+2023-07-18 11:29:08,213 p=8876 u=ubuntu n=ansible | changed: [db01]
+2023-07-18 11:29:08,230 p=8876 u=ubuntu n=ansible | PLAY RECAP ********************************************************************************************************
+2023-07-18 11:29:08,230 p=8876 u=ubuntu n=ansible | app01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 11:29:08,230 p=8876 u=ubuntu n=ansible | cntl                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 11:29:08,230 p=8876 u=ubuntu n=ansible | db01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 11:29:08,231 p=8876 u=ubuntu n=ansible | mc01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 11:29:08,231 p=8876 u=ubuntu n=ansible | mq01                       : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
+2023-07-18 11:29:08,231 p=8876 u=ubuntu n=ansible | web01                      : ok=3    changed=1    unreachable=0    failed=0    skipped=0    rescued=0    ignored=0   
